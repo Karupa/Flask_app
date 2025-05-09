@@ -46,6 +46,10 @@ Flask/
 # Run flask app
 >> python app.py
 
+# for credentials
+>> 🔐 Create a `.env` file in the root folder using `.env.example` as a reference.
+
+
 
 
 
