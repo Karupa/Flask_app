@@ -48,6 +48,8 @@ Flask/
 
 # for credentials
 >> 🔐 Create a `.env` file in the root folder using `.env.example` as a reference.
+
+
 # as we should not push the .env file as it is, I have added one .env.example into github for ur reference.
 # if you really need those ping me or send an email on mkarupaswamy1999@gmail.com, I will share those.
 
