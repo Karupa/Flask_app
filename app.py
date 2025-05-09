@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 from pyngrok import ngrok
 
-# Open a public URL for local port 5000
+# Open a public URL for local port 5000 or ur customized one
 '''public_url = ngrok.connect(5000)
 print("Public URL:", public_url)
 
