@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Welcome.css')}}">
+    {%extends 'base.html'%}
+    {% block head%}{%endblock%}
+</head>
+
+<body>
+    {% block body %}
+    <div class="container">
+        <h1>Welcome back Our Website {{name}}!</h1>
+        
+        <p>We are glad to have you here. Explore and enjoy your stay!</p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='scientist.png') }}">
+        </div>
+        <a href="/Home" class="btn">Get Started</a>
+    </div>
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    {% endblock %}
+
+    <script>
+        function goBack() {
+            window.history.back(); // Goes to the previous page
+        }
+    </script>
+
+</body>
+{%block footer%}{%endblock%}
+</html>

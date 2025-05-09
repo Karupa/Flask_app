@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='form.css')}}">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <div class="form-container">
+       
+        <form action="{{ url_for('protected_form') }}" method="POST" id="protected_form">
+            
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" name="username" placeholder="Enter your Username" required>
+            </div>
+
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="Enter your Name" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="text" name="Age" placeholder="Enter your Age" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <select name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Salary:</label>
+                <input type="number" name="salary" placeholder="Enter your Salary" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Enter your Password" required>
+            </div>
+
+            <input type="submit" name="login" value="Submit">
+        </form>
+
+        <a href="http://127.0.0.3:5000/" class="back-link">← Back</a>
+    </div>
+
+</body>
+</html>

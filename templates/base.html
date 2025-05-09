@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <style>
+        /* General Styling */
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px; /* Add this to prevent content from hiding behind navbar */
+}
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000; /* Ensure navbar is above everything */
+}
+
+
+        /* Header Styling */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Body Styling */
+        main {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+    </style>
+    {% block header %}
+    
+    {% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar">
+        <div class="logo">MyApp</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('Home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('show') }}">Show Data</a></li>
+            <li><a href="{{ url_for('Goto_upload') }}">Upload File</a></li>
+           <!-- <li><a href="{{ url_for('login') }}">Login</a></li>-->
+            <li><a href="{{ url_for('Logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% block body %}{% endblock %}
+    </div>
+
+    <!-- Footer -->
+    
+</body>
+<footer style="background-color: #333; color: #fff; padding: 20px; text-align: center;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 10px;">
+
+        <!-- About Section -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3>About Us</h3>
+            <p>We are committed to providing the best services to our users. Your satisfaction is our top priority!</p>
+        </div>
+
+        <!-- Contact Section -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3>Contact Us</h3>
+            <p>Email: contact@example.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3>Quick Links</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="#home" style="color: #fff; text-decoration: none;">Home</a></li>
+                <li><a href="#about" style="color: #fff; text-decoration: none;">About Us</a></li>
+                <li><a href="#services" style="color: #fff; text-decoration: none;">Services</a></li>
+                <li><a href="#contact" style="color: #fff; text-decoration: none;">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3>Follow Us</h3>
+            <a href="#" style="margin-right: 10px; color: #fff; text-decoration: none;">Facebook</a>
+            <a href="#" style="margin-right: 10px; color: #fff; text-decoration: none;">Twitter</a>
+            <a href="#" style="color: #fff; text-decoration: none;">Instagram</a>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div style="margin-top: 20px;">
+        <p>&copy; 2025 Your Website. All rights reserved.</p>
+    </div>
+</footer>
+
+</html>

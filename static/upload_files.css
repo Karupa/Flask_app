@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.back-button:hover {
+    background-color: #0056b3;
+}.back-button {
+position: absolute;
+top: 20px;
+left: 20px;
+padding: 10px 20px;
+font-size: 16px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+/* Button Styles */
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+}
+
+.button:hover {
+    background-color: #038a5a;
+}
+.image-container {
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.button.cancel {
+    background-color: #ff4d4d;
+}
+
+.button.cancel:hover {
+    background-color: #cc0000;
+}
+
+/* File Input Styles */
+.file-input {
+    margin-bottom: 1.5rem;
+}
+.image-container {
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.file-input input[type="file"] {
+    display: none;
+}
+
+.file-input label {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.file-input label:hover {
+    background-color: #038a5a;
+}
+
+.file-name {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Button Container */
+.button-container {
+    margin-top: 1.5rem;
+}

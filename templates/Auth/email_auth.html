@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='verify.css')}}">
+
+</head>
+<body>
+    <div class="container">
+    <form method="POST" action='{{url_for('Email')}}'>
+        <h2>Email</h2>
+        <label>Enter Email id:</label>
+        <input type="email" name="email" required>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button type="submit">Send OTP</button>
+    </form>
+</div>
+
+</body>
+</html>

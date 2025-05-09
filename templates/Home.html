@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" typ
+   e="text/css" href="{{ url_for('static', filename='upload_files.css') }}">-->
+    <link rel="stylesheet" href="{{url_for('static',filename='Welcome.css')}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    {%extends 'base.html'%}
+    {% block head%}{%endblock%}
+</head>
+<body>
+    {%block body%}
+
+    <div class="container">
+        <h1>Welcome back {{name}}!</h1>
+        <p>Click the button below to go to the File Upload Page.</p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='file_conversion.png') }}" alt="Welcome Image">
+        </div>
+        
+        <a href="http://127.0.0.3:5000/GoTo_uploadpage" class="button">Go to Upload Page</a>
+    </div>
+     <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">Go Back</button>
+    {%endblock%}
+     <script>
+         function goBack() {
+            window.location.href = "{{ url_for('show') }}";; // Goes to the previous page
+         }
+     </script>
+</body>
+</html>

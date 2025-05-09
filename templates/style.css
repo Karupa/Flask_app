@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    display: inline-block;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+.container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+.file-input {
+            margin-bottom: 1.5rem;
+        }
+
+.file-input input[type="file"] {
+            display: none;
+        }
+
+.file-input label {
+            background-color: #04AA6D;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+.file-input label:hover {
+            background-color: #038a5a;
+        }
+
+.button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+.button:hover {
+            background-color: #038a5a;
+        }
+.button.cancel {
+            background-color: #ff4d4d;
+        }
+
+.button.cancel:hover {
+            background-color: #cc0000;
+        }
+
+.button.refresh {
+            background-color: #007bff;
+        }
+
+.button.refresh:hover {
+            background-color: #0056b3;
+        }
+
+.file-name {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 14px;
+        }
+
+.button-container {
+            margin-top: 1.5rem;
+        }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+    
+   
+    
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <h2>Welcome to Our App</h2>
+
+        <p>Hello, <strong>{{ content }}</strong></p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='lab.png') }}" alt="Welcome Image">
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="http://127.0.0.3:5000/login/">🔐 Login</a></li>
+            <li><a href="http://127.0.0.3:5000/user/">👤 User</a></li>
+           
+            <li><a href="http://127.0.0.3:5000/form/">📝 Registration</a></li>
+            <li><a href="http://127.0.0.3:5000/get_details">🛠️ Admin</a></li>
+        </ul>
+        
+
+        <p class="footer">&copy; 2025 Flask Application. All Rights Reserved.</p>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

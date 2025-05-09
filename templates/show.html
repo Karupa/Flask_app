@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask and MongoDB</title>
+   
+    <link rel="stylesheet" href="{{url_for('static',filename='Welcome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='show.css')}}">
+    {%extends 'base.html'%}
+    {%block head%}{%endblock%}
+</head>
+
+<body>
+    {%block body%}
+    <h1>Data from MongoDB</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.username }}</td>
+                <td>{{item.name}}</td>
+                <td>{{ item.Age }}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.salary}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Back Button -->
+    <button class="back-button" onclick="goBack()">Go Back</button>
+
+    {%endblock%}
+    <script>
+        function goBack() {
+            window.history.back(); // Goes to the previous page
+        }
+    </script>
+
+</body>
+<footer>
+    {%block footer%}{%endblock%}
+</footer>
+
+</html>

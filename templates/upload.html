@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='Welcome.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='upload_files.css') }}">
+    {%extends 'base.html'%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploads</title>
+    
+    {% block head%}{%endblock%}
+</head>
+<body>
+    {%block body%}
+    <div class="container">
+        <h1>Hello {{name}}</h1>
+        <p>Upload a File</p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='upload.png') }}" alt="Welcome Image">
+        </div>
+        <form action='{{url_for('upload_file')}}' method="POST" enctype="multipart/form-data" id="uploadForm">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="file-input">
+                <input id="file" type="file" name="file" required>
+                <label for="file">Choose a file</label>
+                <div class="file-name" id="file-name">No file chosen</div>
+            </div>
+            <div class="button-container">
+                <button class="button" type="submit">Upload</button>
+                <button class="button cancel" type="button" id="cancelButton">Cancel Upload</button>
+              <!-- <button class="button refresh" type="button" id="refreshButton">Refresh</button>-->
+            </div>
+        </form>
+        <h3>File Preview:</h3>
+        <img id="filePreview" src="" alt="No file selected" style="max-width: 100%; max-height: 300px; display: none; border: 1px solid #ddd; padding: 5px; border-radius: 5px;">
+
+    </div>
+    {%endblock%}
+    <script>
+        // Display selected file name
+        document.getElementById('file').addEventListener('change', function() {
+            var fileName = this.files[0] ? this.files[0].name : "No file chosen";
+            document.getElementById('file-name').textContent = fileName;
+            previewFile();
+        });
+
+        // Cancel Upload functionality
+        document.getElementById('cancelButton').addEventListener('click', function() {
+            document.getElementById('file').value = ''; // Clear the file input
+            document.getElementById('file-name').textContent = "No file chosen"; // Reset the file name display
+        });
+
+        // Refresh page functionality
+       // document.getElementById('refreshButton').addEventListener('click', function() {
+       //     location.reload(); // Reload the page
+       // });
+
+        //Preview the file
+        function previewFile() {
+            const preview = document.getElementById('filePreview');
+            const file = document.getElementById('file').files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                // Load and display the file once it's read
+                reader.onload = function (event) {
+                    preview.src = event.target.result;
+                    preview.style.display = 'block';  // Show the preview
+                };
+
+                reader.readAsDataURL(file);  // Read the file as a Data URL (Base64 encoded)
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';  // Hide the preview if no file is selected
+            }
+        }
+    </script>
+    
+</body>
+</html>
